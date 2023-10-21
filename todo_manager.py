@@ -17,9 +17,11 @@ def remove_task(task, todos):
 
 def list_tasks(todos):
     print("To-Do List: ")
+    i = 1
     for task, info in todos.items():
         status = '✓' if info['completed'] else ' '
-        print(f"{status} {task}")
+        print(f"{i} [{status}] {task}")
+        i += 1
 
 def program():
     while True:
