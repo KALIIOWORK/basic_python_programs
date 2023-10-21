@@ -1,47 +1,25 @@
-import pygame
-import math
+def sierpinski(level):
+    if level == 0:
+        return ["*"]
 
-# Initialize Pygame
-pygame.init()
+    lower_triangle = sierpinski(level - 1)
+    spaces = [" " * (2 ** level - 1) for _ in range(2 ** (level - 1))]
 
-# Set up the screen
-width, height = 800, 600
-screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption("Fractal Tree")
+    result = []
+    for i in range(2 ** level):
+        if i < 2 ** (level - 1):
+            result.append(lower_triangle[i] + " " + lower_triangle[i])
+        else:
+            result.append(lower_triangle[i - 2 ** (level - 1)] + spaces[i - 2 ** (level - 1)] + lower_triangle[i - 2 ** (level - 1)])
 
-# Colors
-background_color = (0, 0, 0)
-tree_color = (0, 255, 0)
+    return result
 
-# Function to draw a fractal tree
-def draw_tree(x, y, branch_length, angle, depth):
-    if depth > 0:
-        # Calculate the endpoint of the branch
-        x2 = x + int(math.cos(math.radians(angle)) * branch_length)
-        y2 = y - int(math.sin(math.radians(angle)) * branch_length)
+def print_sierpinski(level):
+    sierpinski_pattern = sierpinski(level)
+    for row in sierpinski_pattern:
+        print(row)
 
-        # Draw the branch
-        pygame.draw.line(screen, tree_color, (x, y), (x2, y2), 2)
+# Set the desired level of the Sierpinski Triangle (adjust as needed)
+level = 4
 
-        # Recursive calls for right and left branches
-        draw_tree(x2, y2, branch_length * 0.7, angle - 20, depth - 1)
-        draw_tree(x2, y2, branch_length * 0.7, angle + 20, depth - 1)
-
-# Main drawing loop
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # Clear the screen
-    screen.fill(background_color)
-
-    # Draw the fractal tree
-    draw_tree(width // 2, height - 50, 100, -90, 9)
-
-    # Update the display
-    pygame.display.flip()
-
-# Quit Pygame
-pygame.quit()
+print_sierpinski(level)
