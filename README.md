@@ -1,4 +1,4 @@
-# Welcome to Basic Python Programs Repository! 🐍
+# Welcome to the Basic Python Programs Repository! 🐍
 
 ## Introduction
 
@@ -43,7 +43,7 @@ New to open source? No worries!
 ### Code Review Process
 
 - All pull requests will be reviewed by maintainers.
-- Please be patient; we will respond to your pull request within on Time.
-- Be open to feedback and be willing to make changes if required.
+- Please be patient; we will respond to your pull request within time.
+- Be open to feedback and willing to make changes if required.
 
 We look forward to your contributions! Happy coding! 🚀
