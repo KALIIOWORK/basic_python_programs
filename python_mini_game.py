@@ -50,4 +50,4 @@ elif ready.lower() == "no":
 else:
     print("\nPlease enter yes or no!\nPlease play again :)\n")
 
-print('BYE!')
+print('Thank you\nBYE!')
