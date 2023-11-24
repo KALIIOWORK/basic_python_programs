@@ -46,8 +46,8 @@ if ready.lower() == "yes":
     print('Marks obtained:', mark)
 
 elif ready.lower() == "no":
-    print("\nNo problem, just take your time to review and come back again\n")
+    print("\nNo problem, just take your time to review and come back again\nlease play again :)\n")
 else:
-    print("\nPlease enter yes or no!\n")
+    print("\nPlease enter yes or no!\nPlease play again :)\n")
 
 print('BYE!')
