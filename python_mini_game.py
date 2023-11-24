@@ -42,12 +42,12 @@ if ready.lower() == "yes":
 
     print('\nThankyou for Playing this small quiz game, you attempted', score, "questions correctly!\n")
 
+    mark = (score / total_questions) * 100
+    print('Marks obtained:', mark)
+
 elif ready.lower() == "no":
     print("\nNo problem, just take your time to review and come back again\n")
 else:
     print("\nPlease enter yes or no!\n")
 
-
-mark = (score / total_questions) * 100
-print('Marks obtained:', mark)
 print('BYE!')
